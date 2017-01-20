@@ -1,10 +1,18 @@
-def initializer
+def wallet
   puts 'How much money would you like to deposit into the machine today?'
   @money = gets.chomp.to_i
-  game_play
+  puts "What game would you like to play? Slots or Blackjack?"
+  game = gets.chomp.downcase
+  if game == 'slots'
+    puts 'Okay, your first spin will start shortly.'
+    slot_game_play
+  else game == 'blackjack'
+    puts 'Okay, we will deal your first hand shortly.'
+    blackjack_deck
+  end
 end
 
-def game_play
+def slot_game_play
   wheel_symbols = ["Cherry", "Seven", "Orange", "Jackpot", "Bell"]
   puts "Total money you have: $#{@money}"
   puts
@@ -19,28 +27,26 @@ def game_play
   @third_spin_symbol = wheel_symbols.sample
 
   puts "Your spin was: \n #{@first_spin_symbol} - #{@second_spin_symbol} - #{@third_spin_symbol}"
-  winnings_generator
+  slot_winnings_generator
 
   winning_values = @calculation_of_winnings
 
   @money += winning_values
 
   if @calculation_of_winnings >= 1
+    puts
     puts "Congratulations! You won $#{winning_values}"
     puts "Your new balance is $#{@money}"
-    puts "Would you like to play again? Type yes to continue."
-    play_again = gets.chomp.downcase
-    play_again == 'yes' ? game_play : puts("Okay. Game over, thanks for playing! Your finale cash out balance is #{@money}")
+    play_game_again
   else
+    puts
     puts "You lost. Sorry, try again."
     puts "Your new balance is $#{@money}"
-    puts "Would you like to play again? Type yes to continue."
-    play_again = gets.chomp.downcase
-    play_again == 'yes' ? game_play : puts("Okay. Game over, thanks for playing! Your finale cash out balance is #{@money}")
+    play_game_again
   end
 end
 
-def winnings_generator
+def slot_winnings_generator
   if @first_spin_symbol == "Jackpot" && @second_spin_symbol == "Jackpot" && @third_spin_symbol == "Jackpot"
     @calculation_of_winnings = @bet_amount * 100
   elsif @first_spin_symbol == @second_spin_symbol && @second_spin_symbol == @third_spin_symbol
@@ -52,4 +58,58 @@ def winnings_generator
     @calculation_of_winnings = @bet_amount * 0
   end
 end
-initializer
+
+def play_game_again
+  puts "Would you like to play again? Type yes to continue."
+  play_again = gets.chomp.downcase
+  play_again == 'yes' ? slot_game_play : puts("Okay. Game over, thanks for playing! Your final cash out balance is $#{@money}")
+end
+# wallet
+
+
+
+def blackjack_deck
+  @deck = (1..56).to_a.shuffle
+  @your_hand = [@deck.pop, @deck.pop]
+  p @your_hand
+end
+
+def card_identification(card) #given a card numb(1..52) identifies the face and suit of that card
+  suit = (case (card-1)/13
+          when 0 then " of hearts"
+          when 1 then " of clubs"
+          when 2 then " of diamonds"
+          when 3 then " of spades"
+          else raise StandardError
+          end)
+  case card%13
+    when 1 then return "Ace" + suit
+    when 11 then return "Jack" + suit
+    when 12 then return "Queen" + suit
+    when 0 then return "King" + suit
+    else return (card%13).to_s + suit
+  end #end case
+end
+
+def card_identification
+  card_suit = 
+  if @your_hand == (1..14)
+    return " of hearts"
+  elsif @your_hand == (15..28)
+    return " of clubs"
+  elsif @your_hand == (29..42)
+    return " of diamonds"
+  elsif @your_hand == (43..56)
+    return " of spades"
+  end
+    if @your_hand == 11 || 25 || 39 || 53
+      return 'Jack' + card_suit
+    elsif @your_hand == 12 || 26 || 40 || 54
+      return 'Queen' + card_suit
+    elsif @your_hand == 13 || 27 || 41 || 55
+      puts 'King' + card_suit
+    elsif @your_hand == 14 || 28 || 42 || 56
+      puts 'Ace' + card_suit
+    end
+end
+blackjack_deck

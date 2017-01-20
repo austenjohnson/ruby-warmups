@@ -1,6 +1,5 @@
 # Write a method that computes the running total of an array. Allow for the input of integers and strings. Ask the user to enter exit when they want to exit. Bonus: Ask them if they want to do all the math things and add it to the total
 
-
 puts 'Enter input to add it to an array. The numbers will be added together for a total. Type exit to exit'
 puts
 

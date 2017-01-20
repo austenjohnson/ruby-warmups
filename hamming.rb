@@ -41,34 +41,41 @@
 # y = ham2.each_char {|d| puts d, ' '}
 
 # if ham1.each_char == ham2.each_char
-  
+
 # elsif ham1.each_char != ham2.each_char
 #   puts "Not equal"
 # end
+require 'pry'
 
 def hamming
   ham1 = "GAGCCTACTAACGGGAT"
   ham2 = "CATCGTAATGACGGCCT"
   fin = []
   if ham1.length == ham2.length
-    chk1 = ham1.split('')
-    chk2 = ham2.split('')
+    chk1 = ham1.split(//)
+    chk2 = ham2.split(//)
   else
     puts "Not the same length."
   end
+  # binding.pry
+  @zipped_arr = chk1.zip(chk2)
+  # binding.pry
 
-#   chk1.each do |x|
-#     chk2.each do |y|
-#       if x == y
-#         fin << x 
-#       else
-        
-#     end
-#   end
-# end
-
-  p chk1
-  p chk2
-  p fin
+  until @zipped_arr.length == 0
+    if @zipped_arr[0][0] == @zipped_arr[0][1]
+      fin << @zipped_arr[0][0]
+      @zipped_arr.shift
+    else
+      fin << 'x'
+      @zipped_arr.shift
+      # @zipped_arr.shift
+    end
+  end
+  hamming = fin.join("")
+  p "Every match is moved into the 'Hamming String fin:' and non matches get an x"
+  p "Hamming String one: #{ham1}"
+  p "Hamming String two: #{ham2}"
+  p "Hamming String fin: #{hamming}"
+  p 
 end
 hamming
