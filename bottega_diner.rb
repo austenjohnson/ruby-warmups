@@ -1,3 +1,4 @@
+# Write a restaraunt with menu items and prices (work as a group) (working with nested hashes)
 puts 'Welcome to Bottega Diner, please place your order.'
 puts
 

@@ -1,3 +1,4 @@
+# Write a program that searches a string for input
 puts "Type in a word to search the string for it."
 def checker
 str = "one two three four five six seven eight nine ten"

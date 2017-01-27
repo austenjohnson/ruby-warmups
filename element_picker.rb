@@ -1,3 +1,4 @@
+# Write a program that allows a user to enter input and then choose even or odd to print all of the words at that index
 puts 'Enter some input: '
 @input = gets.chomp.downcase
 
@@ -17,7 +18,7 @@ def odd_or_even
   elsif @choice == 'choose index'
     choose_index
   else
-    puts 'Your choice isn\t an option. Try again.'
+    puts 'Your choice isn\'t an option. Try again.'
     convert_to_arr
   end
 end

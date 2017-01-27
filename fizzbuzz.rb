@@ -1,20 +1,15 @@
+# Write A program that prints the number 1 to 100
 100.times.each do |x|
-	if x % 3 == 0 && x % 5 == 0
-		puts 'FizzBuzz'
-	elsif x % 3 == 0
-		puts 'Fizz'
-	elsif x % 5 == 0
-		puts 'Buzz'
-	else puts x
-	end
+  if x % 3 == 0 && x % 5 == 0
+    puts 'FizzBuzz'
+  elsif x % 3 == 0
+    puts 'Fizz'
+  elsif x % 5 == 0
+    puts 'Buzz'
+  else puts x
+  end
 end
 
-##               ^^^^^DOES NOT WORK^^^^^
-
-
-
-
-# Write A program that prints the number 1 to 100
 # def fizzbuzz
 
 # 1.upto(100) do |number|

@@ -1,3 +1,4 @@
+# Example of methods that can affect arrays
 arr = [nil, 'hi', 1, 8, nil, 'you', 'then', 53, nil]
 
 def on_all array

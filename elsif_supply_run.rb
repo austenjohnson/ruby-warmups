@@ -1,3 +1,5 @@
+# Modify the previous program such that only the users Rick, Daryl and Michone are 
+# greeted with their names, everyone else is told to go out and find supplies.
 class NewGreeting
 	print 'What\'s your name?'
 	name = gets.chomp.downcase

@@ -1,3 +1,4 @@
+# Binary guessing game where cpu tells you a number is higher or lower from 1 - 25
 def play_game
 answer = true
 random = rand(1..25)

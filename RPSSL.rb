@@ -1,3 +1,4 @@
+# Write a program that plays rock paper scissors spock lizard with the user
 puts 'The game is Rock, Paper, Scissors, Spock, Lizard.'
 puts
 puts 'Scissors cuts Paper, Paper covers rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors, Scissors decapitate Lizard, Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock, Rock crushes Scissors.'

@@ -1,3 +1,4 @@
+# Write a program that asks the user for a number n and prints the sum of the numbers 1 to n
 def math
   puts 'Enter a number and the computer will give you the sum or product of 1 to your number.'
   puts

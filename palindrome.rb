@@ -1,3 +1,4 @@
+# Write a method that gives the palindrome of anything entered.
 puts "Enter A word for the computer to return it's palindrome."
 
 def palindrome

@@ -1,3 +1,4 @@
+# Make a casino based in Ruby. 
 def wallet
   puts 'How much money would you like to deposit into the machine today?'
   @money = gets.chomp.to_i

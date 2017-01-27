@@ -1,9 +1,11 @@
 # Magic Number Ruby Psuedocode:
 
+# Solve the riddle behind the answer
+
 # Basic Output: 
 # please input a number: 10
-# 10 is 3 letters
-# 3 is 5 letters
+# 10 is 3
+# 3 is 5
 # 5 is 4
 # 4 is 4 and 4 is the magic number
 # please input another number or type quit
