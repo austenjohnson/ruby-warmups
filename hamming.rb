@@ -33,18 +33,6 @@
 # that based on the definition, each language could deal with getting sequences
 # of equal length differently.
 
-
-# ham1 = "GAGCCTACTAACGGGAT"
-# ham2 = "CATCGTAATGACGGCCT"
-
-# x = ham1.each_char {|c| puts c, ' '}
-# y = ham2.each_char {|d| puts d, ' '}
-
-# if ham1.each_char == ham2.each_char
-
-# elsif ham1.each_char != ham2.each_char
-#   puts "Not equal"
-# end
 require 'pry'
 
 def hamming
